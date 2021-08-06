@@ -1,0 +1,128 @@
+cuts_SR:
+  - (lep_category==1 || lep_category==3)
+  - ngood_jets >= 2
+  - ngood_bjets == 0
+  - nhad_taus == 0
+  - met_pt > 60
+  - delta_R_ll < 2.5
+  - abs_delta_phi_j_met > 0.5
+  - delta_Z_mass < 30
+  - Jet_etas_multiplied < 0
+  - dijet_Mjj>400
+  - dijet_abs_dEta>2.4
+
+cuts_CR_DY:
+  - (lep_category==1 || lep_category==3) 
+  - ngood_jets>=2
+  - ngood_bjets==0
+  - nhad_taus==0
+  - met_pt>30  
+  - met_pt<60
+  # - met_pt>60  
+  # - met_pt<120  
+  - abs(Z_mass-91.1876)<15
+  - abs(delta_phi_j_met)>0.5
+  # - dijet_Mjj<400
+  # - dijet_abs_dEta<2.4
+
+cuts_CR_Top:
+  - lep_category==2
+  - abs(Z_mass-91.1876)<15
+  - ngood_bjets >= 2
+  - nhad_taus == 0
+  - abs(delta_phi_j_met)>0.5  
+  - met_pt > 60
+
+cuts_CR_EMu:
+  - lep_category==2
+  - abs(Z_mass-91.1876)<15
+  - ngood_jets >= 2
+  - ngood_bjets == 0
+  - nhad_taus == 0
+  - abs(delta_phi_j_met)>0.5    
+  - met_pt > 60
+
+cuts_CR_WZ:
+  - (lep_category==4 || lep_category==5)
+  - abs(Z_mass-91.1876)<15
+  - ngood_jets>=2
+  - ngood_bjets==0
+  - nhad_taus==0
+  - met_pt>30    
+  - emulatedMET > 60
+  - dijet_Mjj<500
+  - dijet_abs_dEta<2.5
+  - abs(delta_phi_j_met)>0.5      
+
+cuts_CR_ZZ:
+  # Z_pt
+  # - (lep_category==1 || lep_category==3) 
+  - (lep_category==6 || lep_category==7)
+  - abs(Z_mass-91.1876)<15
+  - ngood_jets>=2
+  - ngood_bjets==0
+  - nhad_taus==0
+  - met_pt>30  
+  # - mass_alllep>100
+  - abs(delta_phi_j_met)>0.5
+  # - dijet_Mjj<400
+  # - dijet_abs_dEta<2.4  
+  - emulatedMET>60
+  # - met_pt > 30
+#   - ngood_jets<=1
+
+
+
+
+cuts_nm1:
+  - (lep_category==1 || lep_category==3) 
+  - nhad_taus==0
+  - ngood_jets>=2
+  - ngood_bjets==0
+  - abs(Z_mass-91.1876)<10
+  - Z_pt>50
+  - met_pt>100
+  # - sca_balance>0. && sca_balance<10.
+  - delta_R_ll<2
+  - abs(delta_phi_ZMet)>1
+  - abs(delta_phi_j_met)>1
+  - x_Z<0.5
+  - x_jet20<0.75
+  - x_jet30<0.75
+  - S_T_hard>0.15
+  # - H_T<1500
+  # - CJV_Pt_Sum>0
+  - x_jet30>0.1 && x_jet30<0.8
+  # - abs(dijet_Zep)<4
+  # - dijet_centrality>0
+  # - Jet_pt_Ratio>0
+  - lead_jet_pt>70
+  - trail_jet_pt>40
+  # - Jet_etas_multiplied>0
+
+
+vars_nm1:
+  - ngood_jets
+  - Z_mass
+  - Z_pt
+  - Z_eta
+  - met_pt
+  - sca_balance
+  - delta_R_ll
+  - abs(delta_phi_ZMet)
+  - abs(delta_phi_j_met)
+  - H_T
+  - CJV_Pt_Sum
+  - x_Z
+  - x_jet20
+  - x_jet30
+  - dijet_Zep
+  - dijet_centrality
+  - Jet_pt_Ratio
+  - lead_jet_pt
+  - lead_jet_eta
+  - trail_jet_pt
+  - trail_jet_eta
+  # - Jet_etas_multiplied
+  - S_T_jets
+  - S_T_hard
